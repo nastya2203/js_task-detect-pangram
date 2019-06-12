@@ -13,7 +13,7 @@ test('Should return false for empty phrase', () => {
 });
 
 test('Should return true for pangram phrase', () => {
-  expect(detectPangram('abcdefghijklmopqrstuvwxyz'))
+  expect(detectPangram('abcdefghijklmnopqrstuvwxyz'))
     .toBe(true);
 });
 
