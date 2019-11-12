@@ -16,25 +16,19 @@
  */
 function detectPangram(phrase) {
   let count = 0;
-  const alphabet = [];
   const phraseLetters = [];
   const charCode = 97;
+  const normalizePhrase = phrase.toLowerCase();
 
-  for (let i = 0; i < 26; i++) {
-    alphabet.push(String.fromCharCode(charCode + i));
-  }
-
-  const phraseLowerCase = phrase.toLowerCase();
-
-  for (const str of phraseLowerCase.split('')) {
+  for (const str of normalizePhrase.split('')) {
     if (!phraseLetters.includes(str)) {
       phraseLetters.push(str);
     }
   }
 
-  for (let i = 0; i < alphabet.length; i++) {
+  for (let i = 0; i < 27; i++) {
     for (let j = 0; j < phraseLetters.length; j++) {
-      if (alphabet[i] === phraseLetters[j]) {
+      if (String.fromCharCode(charCode + i) === phraseLetters[j]) {
         count++;
       }
     }
