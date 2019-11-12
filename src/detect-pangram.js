@@ -15,7 +15,30 @@
  * @return {boolean}
  */
 function detectPangram(phrase) {
-  // write code here
+  let count = 0;
+  const phraseLetters = [];
+  const charCode = 97;
+  const normalizePhrase = phrase.toLowerCase();
+
+  for (const str of normalizePhrase.split('')) {
+    if (!phraseLetters.includes(str)) {
+      phraseLetters.push(str);
+    }
+  }
+
+  for (let i = 0; i < 26; i++) {
+    for (let j = 0; j < phraseLetters.length; j++) {
+      if (String.fromCharCode(charCode + i) === phraseLetters[j]) {
+        count++;
+      }
+    }
+  }
+
+  if (count === 26) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = detectPangram;
