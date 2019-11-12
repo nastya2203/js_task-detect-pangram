@@ -26,7 +26,7 @@ function detectPangram(phrase) {
     }
   }
 
-  for (let i = 0; i < 27; i++) {
+  for (let i = 0; i < 26; i++) {
     for (let j = 0; j < phraseLetters.length; j++) {
       if (String.fromCharCode(charCode + i) === phraseLetters[j]) {
         count++;
